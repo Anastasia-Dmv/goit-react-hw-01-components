@@ -1,5 +1,5 @@
 import React from 'react';
-// import user from '../../user.json';
+import PropTypes from 'prop-types'; 
 import style from './Profile.module.css';
 
 
@@ -13,7 +13,7 @@ import style from './Profile.module.css';
 
               <img src={avatar} alt={name} className={style.avatar}/>
               <p className={style.name}>{name}</p>
-              <p className={style.tag}>@              {tag}</p>
+              <p className={style.tag}>@{tag}</p>
               <p className={style.tag}>{location}</p>
 
         </div>
@@ -38,3 +38,19 @@ import style from './Profile.module.css';
 
 }
 export default Profile;
+
+
+Profile.defaultProps = {
+avatar: 'https://dummyimage.com/600x400/000/fff',
+}
+Profile.propTypes ={
+    name: PropTypes.string,
+    tag: PropTypes.string,
+    location: PropTypes.string,
+    avatar: PropTypes.string,
+    stats: PropTypes.shape({
+        followers: PropTypes.number,
+        views: PropTypes.number,
+        likes: PropTypes.number,
+    }),
+};

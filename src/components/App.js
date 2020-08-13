@@ -12,8 +12,7 @@ const App = () => {
     return ( 
     
     <>
-    <Profile  user={user}
-    />
+    <Profile  user={user}/>
     <Statistics title="Upload stats" stats={statisticalData}/>
     <FriendList friends={friends} />
     <TransactionHistory items={transactions} />,

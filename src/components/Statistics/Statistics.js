@@ -8,14 +8,14 @@ const Statistics = ({title, stats}) => {
 
 <section className={style.statistics}>
 
- {title && <h2 className="title">Upload stats</h2>}
+ {title && <h2 className={style.title}>Upload stats</h2>}
 
-  <ul className="stat-list">
+  <ul className={style.statList}>
       {stats.map(stat=>(
 
-    <li className="item" key={stat.id}>
-      <span className="label">{stat.label}</span>
-      <span className="percentage">{stat.percentage}</span>
+    <li className={style.item}  style={{backgroundColor: `#${(Math.random().toString(16)+ '000000').substring(2,8).toUpperCase()}`}} key={stat.id}>
+      <span className={style.label}>{stat.label}</span>
+      <span className={style.percentage}>{stat.percentage}%</span>
     </li>)
       )}
    
